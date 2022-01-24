@@ -1,6 +1,3 @@
-from re import M
-
-
 n = int(input())
 cnt = 0
 
