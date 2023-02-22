@@ -3,11 +3,13 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 arr = [[0] * ( n + 1 )]
+print(arr)
 prefix_sum = [[0] * ( n + 1) for _ in range(n+1)]
 
 for x in range(n):
     arr_row = [0] + [int(x) for x in input().split()]
     arr.append(arr_row)
+    print(arr)
     
 for i in range(1, n+1):
     for j in range(1, n+1):

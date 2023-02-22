@@ -1,3 +1,5 @@
+# 2초
+# O(N)
 n = int(input())
 point = list(map(int, input().split()))
 sum = 0
