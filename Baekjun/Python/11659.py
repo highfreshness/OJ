@@ -1,17 +1,26 @@
-# 0.5초 (1초에 1,000만 연산)
-import sys 
+"""
+    1. 풀이
+        구간합 
+    2. 시간복잡도
+        O(N)
+"""
+import sys
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
+# 데이터의 수(N), 질문 횟수(M) 입력
+N, M = map(int, input().strip().split())
 
+# 구간합을 구할 대상 배열 입력(numbers)
+numbers = list(map(int, input().strip().split()))
+
+# 구간합용 배열(sum_numbers) 생성
+sum_number = [0] # 배열 순서를 1부터 하기 위해 사전 생성
 temp = 0 
-sum_list = [0] # 실제 값은 1번 index 부터 시작되도록 0을 하나 추가
-list_a = list(map(int, input().split()))
+for number in numbers:
+    temp += number
+    sum_number.append(temp)
 
-for x in list_a:
-    temp += x
-    sum_list.append(temp)
-    
-for x in range(m):
-    q1, q2 = map(int, input().split())
-    print(sum_list[q2]- sum_list[q1-1])
+# 질문 횟수만큼 구간합 계산
+for _ in range(M):
+    i, j = map(int, input().strip().split())
+    print(sum_number[j] - sum_number[i-1])
